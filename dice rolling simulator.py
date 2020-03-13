@@ -35,5 +35,11 @@ while True:
     canvas.create_image(width/2-100, height/2-56, anchor=NW,image=dice_rolloute[dice1])
     canvas.create_image(width / 2 + 50, height / 2 - 56, anchor=NW, image=dice_rolloute[dice2])
     canvas.create_image(width / 2 - 70,height / 2 + 80,anchor=NW, image=roll_again_button)
+    canvas.create_text(width / 2 +25,height/2-150,font=("Purisa", 30),text="It's total of "+str(dice1+dice2+2))
     canvas.update()
-
+    canvas.delete('all')
+    if click_x>width / 2-70 and click_x<width / 2 + 130 and click_y>height / 2 + 80 and click_y<height/2+180:
+        dice1 = randint(0, 5)
+        dice2 = randint(0, 5)
+        click_x = 5000
+        click_y = 5000
